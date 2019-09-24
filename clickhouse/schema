@@ -12,4 +12,4 @@ CREATE TABLE flowlogs
     Bytes UInt64,
     Start UInt64,
     End UInt64
-) ENGINE = MergeTree(Timestamp, (Packets, Bytes, Start, End), 8192)
+) ENGINE = MergeTree(Timestamp, (SrcAddr, DstAddr, Start, End), 8192)
