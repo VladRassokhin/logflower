@@ -24,7 +24,7 @@ fi
 
 set -euo pipefail
 
-for f in $(find "$DIR" -type f -name '*T'); do
+for f in $(find "$DIR" -type f -name '*.csv'); do
 	echo "Processing $f"
 	clickhouse-client --host "$SERVER" --query="INSERT INFO vpc_flow_logs.flowlogs FORMAT CSV" <"$f"
 	rm "$f"
